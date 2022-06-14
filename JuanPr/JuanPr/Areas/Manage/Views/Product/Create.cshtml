@@ -1,0 +1,50 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <form asp-action="create" method="post">
+
+                <div class="form-group">
+                    <label asp-for="Title">Title</label>
+                    <input asp-for="Title" name="Name" type="text" class="form-control">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price">Price</label>
+                    <input asp-for="Price" name="Price" type="number" class="form-control">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="oldPrice">Old Price</label>
+                    <input asp-for="oldPrice" name="oldPrice" type="number" class="form-control">
+                    <span asp-validation-for="oldPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="mainIcon">Main Icon</label>
+                    <input asp-for="mainIcon" name="mainIcon" type="text" class="form-control">
+                    <span asp-validation-for="mainIcon" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Icon1" for="Icon1">Icon1</label>
+                    <input asp-for="Icon1" name="Price" type="number" class="form-control">
+                    <span asp-validation-for="Icon1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Icon2">Icon2</label>
+                    <input asp-for="Icon2" name="Icon2" type="number" class="form-control">
+                    <span asp-validation-for="Icon2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                     <select class="form-select" multiple aria-label="multiple select example" asp-items="new SelectList((List<Category>)ViewBag.Categories,nameof(Category.Id),nameof(Category.Name))">
+
+                     </select>
+                </div>
+               
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>

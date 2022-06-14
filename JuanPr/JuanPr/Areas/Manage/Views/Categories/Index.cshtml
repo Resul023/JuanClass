@@ -1,0 +1,38 @@
+﻿@model List<Category>
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<section class="hero-slider">
+    <div class="container">
+        <div class="row">
+            <a class="btn btn-primary" asp-controller="categories" asp-action="Create">Create</a>
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+
+                        <tr>
+                            <th scope="row">Name</th>
+                            <th scope="row">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                
+                                <td>
+                                    <a type="button" class="btn btn-warning" asp-controller="categories" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                    <a type="button" class="btn btn-danger sweet-delete" asp-controller="categories" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

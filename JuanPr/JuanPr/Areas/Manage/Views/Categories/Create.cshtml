@@ -1,0 +1,26 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <form asp-action="create" method="post">
+
+                <div class="form-group">
+                    <label asp-for="Name" for="Title1">Title2</label>
+                    <input asp-for="Name" name="Name" type="text" class="form-control">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+
+                </div>
+               @* <select class="form-select" multiple aria-label="multiple select example" asp-items="new SelectList((List<Category>)ViewBag.Categories,nameof(Category.Id),nameof(Category.Name))">
+                   
+                </select>*@
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

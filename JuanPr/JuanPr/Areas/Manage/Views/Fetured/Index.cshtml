@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<section class="hero-slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Desc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Services)
+                        {
+                            <tr>
+                                <th>@item.Id</th>
+                                <td>
+                                    <img width="200" src="~/assets/img/slider/@item.Icon"/>
+                                </td>
+                                <td>Otto</td>
+                                <td></td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+

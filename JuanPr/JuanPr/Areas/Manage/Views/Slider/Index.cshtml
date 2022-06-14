@@ -1,0 +1,40 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<section class="hero-slider">
+    <div class="container">
+        <div class="row">
+            <a class="btn btn-primary" asp-controller="slider" asp-action="Create">Create</a>
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        
+                        <tr>
+                            <th scope="row">Title1</th>
+                            <th scope="row">Title2</th>
+                            <th scope="row">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                           @foreach (var item in Model.Sliders)
+                            {
+                                <tr>
+                                    <td>@item.Title1</td>
+                                    <td>@item.Title2</td>
+                                    <td>
+                                        <a type="button" class="btn btn-warning" asp-controller="Slider" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                        <a type="button" class="btn btn-danger sweet-delete" asp-controller="Slider" asp-action="Delete" asp-route-id="@item.Id" >Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
